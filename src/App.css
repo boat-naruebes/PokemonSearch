@@ -1,0 +1,252 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.container {
+  height: 100vh;
+  background-color: rgba(240, 248, 255, 0.774);
+}
+.bander {
+  text-align: center;
+  padding-top: 15px;
+}
+.bander h1 {
+  padding-bottom: 10px;
+  color: rgb(107, 105, 105);
+}
+form input {
+  width: 210px;
+  padding: 10px;
+  margin: 5px;
+}
+.searchinput {
+  width: 50px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 20px;
+  transition: 0.5s;
+}
+.searchinput:hover {
+  font-size: 30px;
+  color: rgb(255, 187, 0);
+}
+
+.grid-container {
+  display: grid;
+  margin: 15px;
+  height: 70vh;
+  grid-template-columns: repeat(8, 1fr);
+  background-color: #e6e6e64b;
+}
+.fetch-image {
+  width: 10vw;
+  transition: 0.3s;
+}
+.fetch-image:hover {
+  cursor: pointer;
+  transition: 0.3s;
+  transform: scale(1.5);
+}
+.popup .left {
+  margin: auto;
+}
+
+.popup .left .img {
+  width: 150px;
+  animation-name: imgpopupgrid;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 1.5s;
+  animation-timing-function: ease-in-out;
+}
+
+.popup {
+  /* font-size: 1vw; */
+  margin-top: 40px;
+  border-radius: 7%;
+  opacity: 0;
+  transform: scale(0);
+  border: 1px solid;
+  display: flex;
+  height: 400px;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: 0.5s;
+}
+.custompopup {
+  opacity: 1;
+  transform: scale(1);
+}
+.popup .right {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  margin: auto 5px;
+  padding-left: 10px;
+  border-left: 2px solid;
+}
+.popup .right h3 {
+  padding: 16px;
+  /* margin: 1vw; */
+}
+
+.popup .left h2 {
+  text-align: center;
+}
+
+.page {
+  height: 10vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page input {
+  margin-left: 30px;
+  text-align: center;
+  width: 80px;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* Hide arror in  Chrome, Safari, Edge, Opera */
+.page input::-webkit-outer-spin-button,
+.page input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide arror in Firefox */
+.page input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.page i {
+  font-size: 20px;
+
+  cursor: pointer;
+}
+.searchpage {
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: 0.5s;
+  margin-right: 15px;
+}
+.searchpage i {
+  margin: 0 15px;
+}
+.searchpage:hover {
+  color: rgb(255, 187, 0);
+}
+.searchimage {
+  /* font-size: 1vw; */
+  border-radius: 8%;
+  margin: 80px auto;
+  width: 350px;
+  background: gray;
+  padding-bottom: 15px;
+}
+
+.searchimage h2 {
+  /* font-size: 1.5vw; */
+  text-align: center;
+  border-bottom: 2px solid black;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+.searchimage img {
+  display: block;
+  /* width: 12vw; */
+  /* height: 300px; */
+  width: 150px;
+  margin: 0 auto;
+  animation-name: popupsearch;
+  animation-delay: 1.5s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.searchdata {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  margin-left: 4vw;
+}
+.searchdata h3 {
+  margin: 0px 10px;
+  padding: 6px;
+}
+.img-no-data {
+  display: block;
+  margin: 30px auto;
+  height: 300px;
+  width: 300px;
+}
+.loading-txt,
+.txt-no-data {
+  text-align: center;
+  margin: 25px;
+}
+.close {
+  width: 40px;
+  cursor: pointer;
+  position: absolute;
+  padding: 2px 5px;
+  right: -10px;
+  top: -10px;
+  font-size: 30px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+@keyframes imgpopupgrid {
+  15% {
+    transform: translateY(-60px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .fetch-image {
+    width: 12vw;
+    height: 11vh;
+  }
+  .popup {
+    font-size: 10px;
+    height: 300px;
+    width: 370px;
+  }
+  .popup .left .img {
+    width: 120px;
+  }
+  .popup .right h3 {
+    padding: 12px;
+  }
+
+  .searchimage {
+    font-size: 12px;
+    width: 280px;
+    margin-top: 50px;
+  }
+  .searchimage .left img {
+    width: 120px;
+  }
+  .img-no-data {
+    margin-top: 50px;
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .popup {
+    height: 250px;
+    width: 290px;
+  }
+  .popup .left .img {
+    width: 80px;
+  }
+}
